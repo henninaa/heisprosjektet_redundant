@@ -2,6 +2,7 @@ package main
 
 import( 
 	"driver_elev"
+	"network1"
 	. "fmt"
 	"time"
 	)
@@ -12,11 +13,11 @@ func main(){
 	time.Sleep(1000 * time.Millisecond)
 	driver_elev.Elev_start_engine(true)
 
-
-
 	state := 0;
 	var gotofloor int;
 	cfloor := 0;
+
+	network1.Network()
 
 	for(true){
 
@@ -64,7 +65,6 @@ func main(){
 				Println("ee");
 			}
 		}
-
 
 
 
