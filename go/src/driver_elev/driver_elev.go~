@@ -80,10 +80,10 @@ func Elev_start_engine(up bool){
 
 	if (up){
 		io_clear_bit(MOTORDIR);
-		speed = MOTOR_SPEED
+		speed = DIR_DOWN;
 	}else {
 		io_set_bit(MOTORDIR);
-		speed = MOTOR_SPEED
+		speed = DIR_DOWN
 	}
 	
 	io_write_analog(MOTOR, speed);

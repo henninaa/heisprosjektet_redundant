@@ -7,7 +7,7 @@ func Queue(inserts chan, request_ chan){
 
 	for{
 
-
+		
 
 
 	}

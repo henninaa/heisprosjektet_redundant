@@ -3,14 +3,11 @@ package main
 import( 
 	"driver_elev"
 	. "fmt"
-	"time"
 	)
 
 func main(){
 	driver_elev.Elev_init();
-	driver_elev.Elev_stop_engine()
-	time.Sleep(1000 * time.Millisecond)
-	driver_elev.Elev_start_engine(true)
+	driver_elev.Elev_set_speed(0)
 
 
 
@@ -23,7 +20,7 @@ func main(){
 		switch (state){
 		case 0:
 
-			
+			Println("ee");
 			if driver_elev.Elev_get_button_signal(2, 0) {
 				gotofloor = 0;
 				state = 1;
@@ -39,7 +36,6 @@ func main(){
 			}else if driver_elev.Elev_get_button_signal(2, 3) {
 				gotofloor = 3;
 				state = 1;
-				
 
 			}
 		
@@ -48,20 +44,18 @@ func main(){
 			if(gotofloor == cfloor){
 				state = 0;
 			}else if(gotofloor < cfloor){
-				driver_elev.Elev_start_engine(false);
-			}else if(gotofloor > cfloor){
 				driver_elev.Elev_start_engine(true);
+			}else if(gotofloor > cfloor){
+				driver_elev.Elev_start_engine(false);
 			}
 			state = 2;
-			Print("uuuuu")
 
 		case 2:
-			
+			Print("uuuuu")
 			if(driver_elev.Elev_get_floor_sensor_signal() == gotofloor){
 				driver_elev.Elev_stop_engine();
 				state = 0;
 				cfloor = gotofloor;
-				Println("ee");
 			}
 		}
 

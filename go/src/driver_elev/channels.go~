@@ -45,11 +45,11 @@ const(
 	PORT0				=	1
 	MOTOR				=	(0x100+0)
 	//non-existing ports(for alignment)
-	BUTTON_DOWN1			=	-1
+	BUTTON_DOWN1		=	-1
 	BUTTON_UP4			=	-1
 	LIGHT_DOWN1			=	-1
 	LIGHT_UP4			=	-1
 
-	MOTOR_SPEED				=	2800
-	
+	DIR_UP				=	2800
+	DIR_DOWN 			= 	-2800
 )
