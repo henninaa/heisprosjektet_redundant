@@ -20,7 +20,7 @@ var button_channel_matrix = [N_FLOORS][N_BUTTONS]int{
 	{BUTTON_UP3, BUTTON_DOWN3, BUTTON_COMMAND3},
 	{BUTTON_UP4, BUTTON_DOWN4, BUTTON_COMMAND4},}
 
-type elev_button_type_t int;
+type Elev_button_type_t int;
 const (
 	BUTTON_CALL_UP = 0 << iota
 	BUTTON_CALL_DOWN
@@ -48,7 +48,7 @@ func Elev_get_floor_sensor_signal() int {
 	}
 }
 
-func Elev_get_button_signal(button elev_button_type_t, floor int) bool{
+func Elev_get_button_signal(button Elev_button_type_t, floor int) bool{
 	//assert(floor >= 0);
 	//assert(floor < N_FLOORS);
 	//assert(!(button == BUTTON_CALL_UP && floor == N_FLOORS - 1));
@@ -138,7 +138,7 @@ func elev_set_floor_indicator(floor int){
 
 
 
-func elev_set_button_lamp(button elev_button_type_t, floor int, value int) {
+func elev_set_button_lamp(button Elev_button_type_t, floor int, value int) {
 	//assert(floor >= 0);
 	//assert(floor < N_FLOORS);
 	//assert(!(button == BUTTON_CALL_UP && floor == N_FLOORS - 1));
